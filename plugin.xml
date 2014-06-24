@@ -1,0 +1,19 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+    <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+            id="edu.csusb.mobileapps.downloadManager" version="0.1.0">
+        <name>File Downloader</name>
+        <description>Downloads a file from a url and stores it on the devices download directory.</description>
+        <license>Apache 2.0</license>
+        <keywords>csusb,downloader,mobile,app</keywords>
+        <js-module src="www/FileDownloader.js" name="FileDownloader">
+            <clobbers target="fileDownloader" />
+        </js-module>
+        <platform name="android">
+            <config-file target="res/xml/config.xml" parent="/*">
+                <feature name="FileDownloader">
+                    <param name="android-package" value="edu.csusb.advising.FileDownloader"/>
+                </feature>
+            </config-file>
+            <source-file src="src/android/FileDownloader.java" target-dir="platforms/android/src/edu/csusb/advising"/>
+        </platform>
+    </plugin>
